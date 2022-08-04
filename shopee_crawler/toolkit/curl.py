@@ -31,35 +31,29 @@ def retry_with_backoff(retries=3, backoff_in_seconds=1):
 
 
 @retry_with_backoff()
-def curl(url: str, timeout: int=10) -> dict:
+def curl(url: str, timeout: int=3) -> dict:
     with open('checked_proxies.txt', 'r') as f:
+        # list of proxies (potentially) blocked by the site 
         checked_proxies = f.readlines()
 
     with open('proxies.txt') as f:
         proxies = f.readlines()
 
+    # filters out only the proxies that have been (potentially) blocked
     proxy_in_use = [x for x in proxies if x not in checked_proxies]
     while True:
+        # changes proxy being used after every iteration
         proxy_idx = random.randint(0, len(proxy_in_use) - 1)
         try:
-            # with open('checked_proxies.txt', 'r') as f:   
-            #     reader = f.read()
-            
-                # if proxy in reader:
-                #     proxy = random.randint(0, len(content) -1)
             response = requests.get(
                 url,
                 headers=get_header(),
                 timeout=timeout, 
                 proxies={'http':'http://{}'.format(proxy_in_use[proxy_idx])}).json()
             
-            # print('Proxy currently being used: ' + proxy_in_use[proxy_idx])
-            
         except:
             with open('checked_proxies.txt', 'a+') as f:
-                f.write(proxy_in_use[proxy_idx]+'\n')
+                f.write(proxy_in_use[proxy_idx])
             
             print("Error, looking for another proxy")
         return response
-
-
