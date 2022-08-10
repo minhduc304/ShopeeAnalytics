@@ -67,7 +67,7 @@ def shop_crawler(url, folder_save='crawl_data_follow_shopID'):
         writer.writerow(data)    
 
 
-with open('urls_mall.txt', 'r') as f:
+with open('datascr/urls_mall.txt', 'r') as f:
     urls_mall = f.readlines()
 
 
@@ -86,3 +86,6 @@ def main(if_reset_proxies, max_workers):
 
 if __name__ == '__main__':
     main(if_reset_proxies=False, max_workers=32)
+
+# for url in tqdm(urls_mall):
+#     shop_crawler(url) 

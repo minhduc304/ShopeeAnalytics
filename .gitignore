@@ -2,6 +2,7 @@ crawl_data_follow_shopID/*
 save_crawl
 log.csv
 shop.json
+datascr/checked_proxies.txt
 
 
 # Byte-compiled / optimized / DLL files

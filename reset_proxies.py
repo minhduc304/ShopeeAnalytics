@@ -21,5 +21,5 @@ def reset_proxies():
         for proxy in tqdm(proxies[:300]):
             f.write(proxy.text + '\n')
     
-    return "Proxies list has been updated."
+    print("Proxies list has been updated.")
 

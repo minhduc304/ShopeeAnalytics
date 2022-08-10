@@ -17,7 +17,8 @@ def get_shop_info(origin, shop_url):
     except Exception:
         match = re.match('https?:\/\/.+?\/shop\/(\d+)\/?.+', shop_url)
         shop_id = match.group(1)
-        url = f"https://{origin}/api/v4/shop/get_shop_detail?shopid={shop_id}"
+        #url = f"https://{origin}/api/v4/shop/get_shop_detail?shopid={shop_id}" old api url
+        url = f"https://{origin}/api/v4/shop/get_categories?limit=20&offset=0&shopid={shop_id}"
         return shop_id, curl(url)['data']['name']
 
 

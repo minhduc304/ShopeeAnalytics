@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
+import tqdm
 
 
 
@@ -16,7 +17,7 @@ all_data = driver.find_elements('xpath', "//div[contains(@class, 'official-shop-
 urls = driver.find_elements('xpath', './/a[@href]')
 
 with open('urls.txt', 'w') as f:
-    for url in urls:
+    for url in tqdm(urls):
         f.write(url.get_attribute('href') + '\n')
 #     print(url.get_attribute('href'))
 

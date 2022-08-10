@@ -48,8 +48,8 @@ def curl(url: str, timeout: int=3) -> dict:
             response = requests.get(
                 url,
                 headers=get_header(),
-                timeout=timeout, 
-                proxies={'http':'http://{}'.format(proxy_in_use[proxy_idx])}).json()
+                timeout=timeout).json() #, 
+                #proxies={'http':'http://{}'.format(proxy_in_use[proxy_idx])}).json()
             
         except:
             with open('checked_proxies.txt', 'a+') as f:
