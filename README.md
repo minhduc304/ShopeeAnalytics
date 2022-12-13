@@ -4,5 +4,14 @@
 
 # Shopee
 
-##### bla bla bla
+##### Shopee Pte. Ltd. is a Singaporean multinational technology company that specialises in e-commerce. They are currently the biggest e-commerce platform in Southeast Asia. As such, the platform is filled with data that could be used for many purposes including market research, education, or creating a sample database for machine learning projects. 
+
+# Why Shopee
+
+##### Shopee has an easily accesible API from which an external user (like me), can obtain detailed data including but not limited to:
+- Vendors 
+- What products they sell
+- How many of those products they have sold
+- The products' prices
+- Their ratings
 
