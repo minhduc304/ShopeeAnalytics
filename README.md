@@ -15,3 +15,5 @@
 - The products' prices
 - Their ratings
 
+##### All of this data and more is available publicly, so Shopee is nothing but a goldmine of data. 
+
