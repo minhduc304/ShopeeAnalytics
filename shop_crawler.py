@@ -6,7 +6,7 @@ import os
 import json
 from tqdm import tqdm
 import concurrent.futures
-from reset_proxies import reset_proxies
+from util.reset_proxies import reset_proxies
 
 
 
