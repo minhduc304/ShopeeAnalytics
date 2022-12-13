@@ -16,7 +16,7 @@ def reset_proxies():
     
     print("Updating list with new proxies.")
 
-    with open('proxies.txt', 'w') as f:
+    with open('datascr/proxies.txt', 'w') as f:
         # limited to 300 because the column containing the proxy ips contained other unnecessary data
         for proxy in tqdm(proxies[:300]):
             f.write(proxy.text + '\n')
