@@ -3,6 +3,7 @@ save_crawl
 log.csv
 shop.json
 datascr/checked_proxies.txt
+test.py
 
 
 # Byte-compiled / optimized / DLL files

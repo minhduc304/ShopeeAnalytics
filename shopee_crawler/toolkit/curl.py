@@ -50,6 +50,7 @@ def curl(url: str, timeout: int=3) -> dict:
                 headers=get_header(),
                 timeout=timeout).json() #, 
                 #proxies={'http':'http://{}'.format(proxy_in_use[proxy_idx])}).json()
+            print(response)
             
         except:
             with open('checked_proxies.txt', 'a+') as f:
